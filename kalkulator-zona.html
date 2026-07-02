@@ -3,9 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <title>Калкулатор Зона</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>Калкулатор Зона</h1>
-  <p>Калкулаторът работи 🎉</p>
+
+<div class="box">
+  <h2>Калкулатор</h2>
+
+  <input id="protein" placeholder="Протеини (g)">
+  <input id="carbs" placeholder="Въглехидрати (g)">
+  <input id="fat" placeholder="Мазнини (g)">
+
+  <button onclick="calc()">Изчисли</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+function calc() {
+  let p = Number(document.getElementById('protein').value);
+  let c = Number(document.getElementById('carbs').value);
+  let f = Number(document.getElementById('fat').value);
+
+  let calories = (p * 4) + (c * 4) + (f * 9);
+
+  document.getElementById('result').innerText =
+    "Калории: " + calories;
+}
+</script>
+
 </body>
 </html>
