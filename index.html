@@ -1,191 +1,69 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-  <meta charset="UTF-8">
-  <title>Път към Баланса</title>
+<meta charset="UTF-8">
+<title>Път към Баланса</title>
 
-  <style>
-    body {
-     <a href="index.html" style="
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  background: rgba(255,255,255,0.2);
-  color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: Arial;
-  z-index: 999;
-  backdrop-filter: blur(6px);
-  transition: 0.3s;
-">
-🏠 Home
-</a>
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: white;
-      text-align: center;
-      animation: fadeIn 1s ease;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  color:white;
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+header{
+  text-align:center;
+  padding:40px 20px;
+}
 
-    .hero {
-      padding: 40px 20px 10px;
-    }
+h1{
+  margin:0;
+  font-size:36px;
+}
 
-    .logo {
-      width: 220px;
-      max-width: 80%;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      animation: float 4s ease-in-out infinite;
-    }
+.menu{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:15px;
+  margin-top:40px;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+a.button{
+  width:220px;
+  text-align:center;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.15);
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  transition:0.3s;
+}
 
-    h1 {
-      margin-top: 15px;
-      font-size: 34px;
-    }
-
-    .lang {
-      margin: 15px 0 30px;
-    }
-
-    .lang button {
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: white;
-      padding: 8px 14px;
-      margin: 5px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .lang button:hover {
-      background: rgba(255,255,255,0.3);
-      transform: scale(1.05);
-    }
-
-    .menu {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.12);
-      padding: 20px;
-      border-radius: 15px;
-      width: 220px;
-      transition: 0.3s;
-      cursor: pointer;
-      animation: pop 0.6s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.08);
-      background: rgba(255,255,255,0.2);
-    }
-
-    @keyframes pop {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin-top: 10px;
-      font-size: 18px;
-    }
-  </style>
+a.button:hover{
+  background:rgba(255,255,255,0.3);
+  transform:scale(1.05);
+}
+</style>
 </head>
 
 <body>
 
-  <div class="hero">
+<header>
+  <h1>Път към Баланса</h1>
+</header>
 
-    <img class="logo" src="https://raw.githubusercontent.com/margaritavelcheva-commits/put-k-balansu/main/WhatsApp%20Image%202026-06-30%20at%2012.12.11.jpeg">
+<div class="menu">
 
-    <h1 id="title">Път към Баланса</h1>
+  <a class="button" href="index(18).html">Игра 1</a>
 
-    <div class="lang">
-      <button onclick="setLang('bg')">BG</button>
-      <button onclick="setLang('en')">EN</button>
-      <button onclick="setLang('ru')">RU</button>
-      <button onclick="setLang('he')">HE</button>
-    </div>
+  <a class="button" href="game2.html">Игра 2</a>
 
-  </div>
+  <a class="button" href="kalkulator-zona.html">Калкулатор</a>
 
-  <div class="menu">
-
-    <div class="card">
-      🎮 <span id="g1">Игра 1</span>
-      <a href="index(18) (1).html">Отвори</a>
-    </div>
-
-    <div class="card">
-      🎮 <span id="g2">Игра 2</span>
-      <a href="index(4).html">Отвори</a>
-    </div>
-
-    <div class="card">
-      🧮 <span id="calc">Калкулатор</span>
-      <a href="kalkulator-zona.html">Отвори</a>
-    </div>
-
-  </div>
-
-<script>
-const t = {
-  bg: {
-    title: "Път към Баланса",
-    g1: "Игра 1",
-    g2: "Игра 2",
-    calc: "Калкулатор"
-  },
-  en: {
-    title: "Path to Balance",
-    g1: "Game 1",
-    g2: "Game 2",
-    calc: "Calculator"
-  },
-  ru: {
-    title: "Путь к Балансу",
-    g1: "Игра 1",
-    g2: "Игра 2",
-    calc: "Калькулятор"
-  },
-  he: {
-    title: "דרך לאיזון",
-    g1: "משחק 1",
-    g2: "משחק 2",
-    calc: "מחשבון"
-  }
-};
-
-function setLang(lang) {
-  document.getElementById("title").innerText = t[lang].title;
-  document.getElementById("g1").innerText = t[lang].g1;
-  document.getElementById("g2").innerText = t[lang].g2;
-  document.getElementById("calc").innerText = t[lang].calc;
-}
-</script>
+</div>
 
 </body>
 </html>
