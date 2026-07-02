@@ -12,7 +12,6 @@ body{
   color:white;
 }
 
-/* HOME */
 .home{
   position:fixed;
   top:15px;
@@ -25,22 +24,20 @@ body{
   z-index:9999;
 }
 
-/* LAYOUT */
 .container{
   text-align:center;
   margin-top:80px;
 }
 
 h1{
-  margin-bottom:5px;
+  margin-bottom:10px;
 }
 
 .subtitle{
   opacity:0.8;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
-/* CARDS */
 .grid{
   display:flex;
   justify-content:center;
@@ -103,20 +100,22 @@ button{
 </div>
 
 <script>
-let count = 0;
+let selected = [];
 
 function toggle(el){
-  if(el.classList.contains("active")){
+  let text = el.innerText;
+
+  if(selected.includes(text)){
+    selected = selected.filter(t => t !== text);
     el.classList.remove("active");
-    count--;
   } else {
+    selected.push(text);
     el.classList.add("active");
-    count++;
   }
 }
 
 function check(){
-  if(count === 3){
+  if(selected.length === 3){
     document.getElementById("result").innerText =
       "Меню собрано правильно 👍";
   } else {
