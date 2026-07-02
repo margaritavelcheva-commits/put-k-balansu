@@ -1,23 +1,15 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Игра 2</title>
+  <title>Завтрак - Игра</title>
 
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
     }
 
     .home {
@@ -32,12 +24,54 @@
       z-index: 9999;
     }
 
-    .box {
+    .container {
+      max-width: 900px;
+      margin: 80px auto;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .card {
       background: rgba(255,255,255,0.12);
-      padding: 30px;
+      padding: 20px;
       border-radius: 15px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      width: 200px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -46,10 +80,45 @@
 
 <a class="home" href="index.html">🏠 Home</a>
 
-<div class="box">
-  <h1>🎮 Игра 2</h1>
-  <p>Играта е заредена успешно</p>
+<div class="container">
+
+  <div class="title">🍳 Завтрак</div>
+  <div class="subtitle">Соберите меню из 3 блоков</div>
+
+  <div class="grid">
+    <div class="card" onclick="add('protein')">🥚 Белки</div>
+    <div class="card" onclick="add('carbs')">🍞 Углеводы</div>
+    <div class="card" onclick="add('fat')">🧈 Жиры</div>
+  </div>
+
+  <button onclick="check()">Проверить</button>
+
+  <div class="result" id="result"></div>
+
 </div>
+
+<script>
+let selection = [];
+
+function add(type) {
+  selection.push(type);
+  document.getElementById("result").innerText =
+    "Выбрано: " + selection.join(", ");
+}
+
+function check() {
+  if (selection.length !== 3) {
+    document.getElementById("result").innerText =
+      "Нужно выбрать 3 блока";
+    return;
+  }
+
+  document.getElementById("result").innerText =
+    "Меню собрано! 👍";
+
+  selection = [];
+}
+</script>
 
 </body>
 </html>
