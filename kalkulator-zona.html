@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="bg">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Калкулатор Блокове</title>
+  <title>Калькулятор - Путь к Балансу</title>
   <style>
     body {
       font-family: Arial;
@@ -16,13 +16,13 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      width: 320px;
+      width: 340px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    input {
+    input, select {
       width: 100%;
       padding: 10px;
-      margin: 5px 0;
+      margin: 6px 0;
     }
     button {
       width: 100%;
@@ -42,30 +42,40 @@
 <body>
 
 <div class="box">
-  <h2>Калкулатор - Път към Баланса</h2>
+  <h2>Калькулятор блоков</h2>
 
-  <input id="waist" placeholder="Обиколка талия (см)">
-  <input id="hip" placeholder="Обиколка ханш (см)">
-  <input id="weight" placeholder="Тегло (кг)">
+  <input id="height" placeholder="Рост (см)">
+  <input id="weight" placeholder="Вес (кг)">
+  <input id="waist" placeholder="Обхват талии (см)">
+  <input id="hip" placeholder="Обхват бёдер (см)">
 
-  <button onclick="calc()">Изчисли</button>
+  <select id="activity">
+    <option value="1">Малоподвижный</option>
+    <option value="1.2">Лёгкая активность</option>
+    <option value="1.5">Активный</option>
+  </select>
+
+  <button onclick="calc()">Рассчитать блоки</button>
 
   <div class="result" id="result"></div>
 </div>
 
 <script>
 function calc() {
+  let h = Number(document.getElementById('height').value);
+  let w = Number(document.getElementById('weight').value);
   let waist = Number(document.getElementById('waist').value);
   let hip = Number(document.getElementById('hip').value);
-  let weight = Number(document.getElementById('weight').value);
+  let act = Number(document.getElementById('activity').value);
 
-  // проста логика за “блокове”
-  let blocks = Math.round((weight / 10) + (hip - waist) / 20);
+  let base = (w * 0.1) + (h / 100);
+  let shape = (hip - waist) / 25;
+  let blocks = Math.round((base + shape) * act);
 
   if (blocks < 1) blocks = 1;
 
   document.getElementById('result').innerText =
-    "Блокове на ден: " + blocks;
+    "Блоки в день: " + blocks;
 }
 </script>
 
