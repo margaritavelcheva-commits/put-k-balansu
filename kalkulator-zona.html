@@ -2,11 +2,11 @@
 <html lang="bg">
 <head>
   <meta charset="UTF-8">
-  <title>Калкулатор Зона</title>
+  <title>Калкулатор Блокове</title>
   <style>
     body {
       font-family: Arial;
-      background: #f5f5f5;
+      background: #f2f2f2;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,8 +16,8 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
+      width: 320px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
     }
     input {
       width: 100%;
@@ -27,7 +27,7 @@
     button {
       width: 100%;
       padding: 10px;
-      background: green;
+      background: #2e7d32;
       color: white;
       border: none;
       cursor: pointer;
@@ -35,17 +35,18 @@
     .result {
       margin-top: 10px;
       font-weight: bold;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
 <div class="box">
-  <h2>Калкулатор</h2>
+  <h2>Калкулатор - Път към Баланса</h2>
 
-  <input id="protein" placeholder="Протеини (g)">
-  <input id="carbs" placeholder="Въглехидрати (g)">
-  <input id="fat" placeholder="Мазнини (g)">
+  <input id="waist" placeholder="Обиколка талия (см)">
+  <input id="hip" placeholder="Обиколка ханш (см)">
+  <input id="weight" placeholder="Тегло (кг)">
 
   <button onclick="calc()">Изчисли</button>
 
@@ -54,14 +55,17 @@
 
 <script>
 function calc() {
-  let p = Number(document.getElementById('protein').value);
-  let c = Number(document.getElementById('carbs').value);
-  let f = Number(document.getElementById('fat').value);
+  let waist = Number(document.getElementById('waist').value);
+  let hip = Number(document.getElementById('hip').value);
+  let weight = Number(document.getElementById('weight').value);
 
-  let calories = (p * 4) + (c * 4) + (f * 9);
+  // проста логика за “блокове”
+  let blocks = Math.round((weight / 10) + (hip - waist) / 20);
+
+  if (blocks < 1) blocks = 1;
 
   document.getElementById('result').innerText =
-    "Калории: " + calories;
+    "Блокове на ден: " + blocks;
 }
 </script>
 
