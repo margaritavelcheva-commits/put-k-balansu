@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Завтрак - Игра</title>
+  <title>Завтрак</title>
 
   <style>
     body {
@@ -26,16 +26,15 @@
 
     .container {
       max-width: 900px;
-      margin: 80px auto;
+      margin: 90px auto;
       text-align: center;
     }
 
-    .title {
-      font-size: 28px;
+    h1 {
       margin-bottom: 10px;
     }
 
-    .subtitle {
+    .desc {
       opacity: 0.8;
       margin-bottom: 30px;
     }
@@ -49,29 +48,33 @@
 
     .card {
       background: rgba(255,255,255,0.12);
-      padding: 20px;
+      padding: 25px;
       border-radius: 15px;
-      width: 200px;
+      width: 180px;
       cursor: pointer;
       transition: 0.3s;
     }
 
     .card:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
       background: rgba(255,255,255,0.2);
     }
 
-    .result {
-      margin-top: 30px;
-      font-size: 20px;
+    .selected {
+      outline: 2px solid #00ffcc;
     }
 
     button {
-      margin-top: 20px;
-      padding: 10px 15px;
+      margin-top: 25px;
+      padding: 10px 18px;
       border: none;
       border-radius: 10px;
       cursor: pointer;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 18px;
     }
   </style>
 </head>
@@ -82,41 +85,43 @@
 
 <div class="container">
 
-  <div class="title">🍳 Завтрак</div>
-  <div class="subtitle">Соберите меню из 3 блоков</div>
+  <h1>🍳 Завтрак</h1>
+  <div class="desc">Соберите меню из 3 блоков</div>
 
   <div class="grid">
-    <div class="card" onclick="add('protein')">🥚 Белки</div>
-    <div class="card" onclick="add('carbs')">🍞 Углеводы</div>
-    <div class="card" onclick="add('fat')">🧈 Жиры</div>
+    <div class="card" onclick="toggle(this,'protein')">🥚 Белки</div>
+    <div class="card" onclick="toggle(this,'carbs')">🍞 Углеводы</div>
+    <div class="card" onclick="toggle(this,'fat')">🧈 Жиры</div>
   </div>
 
   <button onclick="check()">Проверить</button>
 
-  <div class="result" id="result"></div>
+  <div id="result"></div>
 
 </div>
 
 <script>
-let selection = [];
+let selected = [];
 
-function add(type) {
-  selection.push(type);
-  document.getElementById("result").innerText =
-    "Выбрано: " + selection.join(", ");
+function toggle(el, type) {
+  if (selected.includes(type)) {
+    selected = selected.filter(t => t !== type);
+    el.classList.remove("selected");
+  } else {
+    selected.push(type);
+    el.classList.add("selected");
+  }
 }
 
 function check() {
-  if (selection.length !== 3) {
+  if (selected.length !== 3) {
     document.getElementById("result").innerText =
-      "Нужно выбрать 3 блока";
+      "Нужно выбрать ровно 3 блока";
     return;
   }
 
   document.getElementById("result").innerText =
-    "Меню собрано! 👍";
-
-  selection = [];
+    "Меню собрано правильно 👍";
 }
 </script>
 
