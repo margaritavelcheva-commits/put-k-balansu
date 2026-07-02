@@ -3,58 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <title>Път към Баланса</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      text-align: center;
+    }
+
+    .hero {
+      padding: 40px 20px 20px;
+    }
+
+    .logo {
+      width: 220px;
+      max-width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     h1 {
-      margin-bottom: 40px;
+      margin-top: 15px;
+      font-size: 34px;
+    }
+
+    .lang {
+      margin: 15px 0 30px;
+    }
+
+    .lang button {
+      background: rgba(255,255,255,0.15);
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
     }
 
     .card {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.12);
       padding: 20px;
-      margin: 10px;
-      border-radius: 12px;
+      border-radius: 15px;
       width: 220px;
-      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.2);
     }
 
     a {
       color: white;
       text-decoration: none;
-      font-size: 18px;
+      display: block;
+      margin-top: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Път към Баланса</h1>
+  <div class="hero">
 
-  <div class="card">
-    🎮 Игра 1 (стара)<br>
-    <a href="index(18) (1).html">Отвори</a>
+    <img class="logo" src="https://raw.githubusercontent.com/margaritavelcheva-commits/put-k-balansu/main/WhatsApp%20Image%202026-06-30%20at%2012.12.11.jpeg">
+
+    <h1 id="title">Път към Баланса</h1>
+
+    <div class="lang">
+      <button onclick="setLang('bg')">BG</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('he')">HE</button>
+    </div>
+
   </div>
 
-  <div class="card">
-    🎮 Игра 2 (нова)<br>
-    <a href="index(4).html">Отвори</a>
+  <div class="menu">
+
+    <div class="card">
+      🎮 <span id="g1">Игра 1</span>
+      <a href="index(18) (1).html">Отвори</a>
+    </div>
+
+    <div class="card">
+      🎮 <span id="g2">Игра 2</span>
+      <a href="index(4).html">Отвори</a>
+    </div>
+
+    <div class="card">
+      🧮 <span id="calc">Калкулатор</span>
+      <a href="kalkulator-zona.html">Отвори</a>
+    </div>
+
   </div>
 
-  <div class="card">
-    🧮 Калкулатор<br>
-    <a href="kalkulator-zona.html">Отвори</a>
-  </div>
+<script>
+const t = {
+  bg: {
+    title: "Път към Баланса",
+    g1: "Игра 1",
+    g2: "Игра 2",
+    calc: "Калкулатор"
+  },
+  en: {
+    title: "Path to Balance",
+    g1: "Game 1",
+    g2: "Game 2",
+    calc: "Calculator"
+  },
+  ru: {
+    title: "Путь к Балансу",
+    g1: "Игра 1",
+    g2: "Игра 2",
+    calc: "Калькулятор"
+  },
+  he: {
+    title: "דרך לאיזון",
+    g1: "משחק 1",
+    g2: "משחק 2",
+    calc: "מחשבון"
+  }
+};
+
+function setLang(lang) {
+  document.getElementById("title").innerText = t[lang].title;
+  document.getElementById("g1").innerText = t[lang].g1;
+  document.getElementById("g2").innerText = t[lang].g2;
+  document.getElementById("calc").innerText = t[lang].calc;
+}
+</script>
 
 </body>
 </html>
