@@ -14,25 +14,35 @@ const calendarData = {
 
                 {
 
-                    type: "ЗАВТРАК",
+    type: "ЗАВТРАК",
 
-                    image: "images/day01_breakfast.jpg",
+    image: "images/day01_breakfast.jpg",
 
-                    title: "",
+    title: "Ветчина из индейки с овсяной лепешкой",
 
-                    products: [],
+    products: [
 
-                    recipe: "",
+        "Ветчина из индейки — 90 г",
 
-                    balance: {
+        "Овсяная лепешка — 57 г",
 
-                        protein: 3,
+        "Миндаль — 10 г"
 
-                        carbs: 3,
+    ],
 
-                        fat: 3
+    recipe: "Подайте ветчину с овсяной лепешкой. Миндаль используйте как источник полезных жиров.",
 
-                    }
+    balance: {
+
+        protein: 3,
+
+        carbs: 3,
+
+        fat: 3
+
+    }
+
+},
 
                 },
 
