@@ -44,8 +44,6 @@ const calendarData = {
 
 },
 
-                },
-
                 {
 
                     type: "ПЕРЕКУС",
