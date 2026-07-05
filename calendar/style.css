@@ -1,0 +1,32 @@
+/* ===========================================
+   MONTHLY CALENDAR
+   Master Stylesheet
+   Project: Путь к Балансу
+   =========================================== */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- PAGE ---------- */
+
+body {
+    background: #f5f3ee;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: auto;
+    background: white;
+    padding: 20mm;
+}
