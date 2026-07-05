@@ -22,19 +22,30 @@ mealTypes.forEach(type => {
 
         <div class="meal-content">
 
-            <div class="meal-title">${type}</div>
+           <div class="meal-title">
+    ${meal.title || meal.type}
+</div>
 
-            <div class="products">
-                Список продуктов появится здесь.
-            </div>
+<div class="products">
 
-            <div class="recipe">
-                Описание рецепта появится здесь.
-            </div>
+    ${
+        meal.products.length
+            ? "<ul>" + meal.products.map(item => `<li>${item}</li>`).join("") + "</ul>"
+            : ""
+    }
 
-            <div class="balance">
-                Баланс: —
-            </div>
+</div>
+
+<div class="recipe">
+    ${meal.recipe || ""}
+</div>
+
+<div class="balance">
+    Баланс:
+    ${meal.balance.protein} Б •
+    ${meal.balance.carbs} У •
+    ${meal.balance.fat} Ж
+</div>
 
         </div>
     `;
