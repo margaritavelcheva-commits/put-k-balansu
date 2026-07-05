@@ -1,55 +1,49 @@
-document.getElementById("month").textContent = "ИЮЛЬ";
-document.getElementById("dayNumber").textContent = "1";
-document.getElementById("weekday").textContent = "ПОНЕДЕЛЬНИК";
+const day = calendarData.days[0];
 
-const meals = document.getElementById("meals");
+document.getElementById("month").textContent = calendarData.month;
+document.getElementById("dayNumber").textContent = day.day;
+document.getElementById("weekday").textContent = day.weekday;
 
-const mealTypes = [
-    "ЗАВТРАК",
-    "ПЕРЕКУС",
-    "ОБЕД",
-    "ПЕРЕКУС",
-    "УЖИН"
-];
+const mealsContainer = document.getElementById("meals");
 
-mealTypes.forEach(type => {
+day.meals.forEach(meal => {
 
     const card = document.createElement("div");
     card.className = "meal-card";
 
     card.innerHTML = `
-        <div class="meal-image">Фото</div>
+        <div class="meal-image">
+            Фото
+        </div>
 
         <div class="meal-content">
 
-           <div class="meal-title">
-    ${meal.title || meal.type}
-</div>
+            <div class="meal-title">
+                ${meal.title || meal.type}
+            </div>
 
-<div class="products">
+            <div class="products">
+                ${
+                    meal.products.length
+                        ? "<ul><li>" + meal.products.join("</li><li>") + "</li></ul>"
+                        : ""
+                }
+            </div>
 
-    ${
-        meal.products.length
-            ? "<ul>" + meal.products.map(item => `<li>${item}</li>`).join("") + "</ul>"
-            : ""
-    }
+            <div class="recipe">
+                ${meal.recipe}
+            </div>
 
-</div>
-
-<div class="recipe">
-    ${meal.recipe || ""}
-</div>
-
-<div class="balance">
-    Баланс:
-    ${meal.balance.protein} Б •
-    ${meal.balance.carbs} У •
-    ${meal.balance.fat} Ж
-</div>
+            <div class="balance">
+                Баланс:
+                ${meal.balance.protein} Б •
+                ${meal.balance.carbs} У •
+                ${meal.balance.fat} Ж
+            </div>
 
         </div>
     `;
 
-    meals.appendChild(card);
+    mealsContainer.appendChild(card);
 
 });
