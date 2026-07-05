@@ -1,63 +1,44 @@
-const day = calendarData.days[0];
+document.getElementById("month").textContent = "ИЮЛЬ";
+document.getElementById("dayNumber").textContent = "1";
+document.getElementById("weekday").textContent = "ПОНЕДЕЛЬНИК";
 
-document.getElementById("month").textContent = calendarData.month;
-document.getElementById("dayNumber").textContent = day.day;
-document.getElementById("weekday").textContent = day.weekday;
+const meals = document.getElementById("meals");
 
-const mealsContainer = document.getElementById("meals");
+const mealTypes = [
+    "ЗАВТРАК",
+    "ПЕРЕКУС",
+    "ОБЕД",
+    "ПЕРЕКУС",
+    "УЖИН"
+];
 
-day.meals.forEach(meal => {
+mealTypes.forEach(type => {
 
     const card = document.createElement("div");
     card.className = "meal-card";
 
     card.innerHTML = `
-
-        <div class="meal-image">
-            Фото
-        </div>
+        <div class="meal-image">Фото</div>
 
         <div class="meal-content">
 
-            <div class="meal-title">
-                ${meal.type}
-            </div>
+            <div class="meal-title">${type}</div>
 
             <div class="products">
-
-                ${
-                    meal.products.length
-                    ? meal.products.map(p => `
-                        <div>${p.name} — ${p.amount}</div>
-                    `).join("")
-                    : "<em>Список продуктов будет добавлен позже</em>"
-                }
-
+                Список продуктов появится здесь.
             </div>
 
             <div class="recipe">
-
-                ${
-                    meal.recipe.intro
-                    ? meal.recipe.intro
-                    : "Описание рецепта будет добавлено позже."
-                }
-
+                Описание рецепта появится здесь.
             </div>
 
             <div class="balance">
-
-                Баланс:
-                ${meal.balance.protein} Б •
-                ${meal.balance.carbs} У •
-                ${meal.balance.fat} Ж
-
+                Баланс: —
             </div>
 
         </div>
-
     `;
 
-    mealsContainer.appendChild(card);
+    meals.appendChild(card);
 
 });
