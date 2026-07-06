@@ -163,3 +163,208 @@ body{
 
     color:#4f7f37;
 }
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+.hero h1{
+
+    font-size:44px;
+
+    color:#55773c;
+
+    font-family:Georgia,serif;
+
+}
+
+.subtitle{
+
+    margin-top:10px;
+
+    color:#888;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   NAVIGATION
+========================== */
+
+.day-navigation{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.day-navigation button{
+
+    background:#5f8444;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 24px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.day-navigation button:hover{
+
+    background:#46662f;
+
+}
+
+.day-title{
+
+    text-align:center;
+
+}
+
+#month{
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    color:#888;
+
+}
+
+#dayNumber{
+
+    font-size:64px;
+
+    font-weight:bold;
+
+    line-height:1;
+
+}
+
+#weekday{
+
+    margin-top:8px;
+
+    font-size:26px;
+
+    color:#56753f;
+
+    font-weight:bold;
+
+}
+
+/* ==========================
+   IMAGE
+========================== */
+
+.day-photo{
+
+    width:100%;
+
+    border-radius:16px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+}
+
+.day-photo img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* ==========================
+   MEALS
+========================== */
+
+.meal-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:#fcfcfc;
+
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+}
+
+.meal-title{
+
+    background:#6d924d;
+
+    color:white;
+
+    padding:14px 18px;
+
+    font-size:22px;
+
+    margin:0;
+
+}
+
+.products{
+
+    padding:18px;
+
+    line-height:1.8;
+
+}
+
+.balance{
+
+    background:#f4f8ef;
+
+    padding:15px 18px;
+
+    color:#55773c;
+
+    font-weight:bold;
+
+    border-top:1px solid #e2ead8;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:14px;
+
+}
