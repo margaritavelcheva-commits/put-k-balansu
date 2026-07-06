@@ -13,46 +13,64 @@ function renderDay(index) {
 
     const day = calendarData.days[index];
 
-    month.textContent = calendarData.month;
+    month.textContent = "";
     dayNumber.textContent = day.day;
     weekday.textContent = day.weekday;
 
     let html = "";
 
-    if (day.image) {
-        html += `
-            <div class="day-photo">
-                <img src="${day.image}" alt="${day.weekday}">
-            </div>
-        `;
-    }
-
     day.meals.forEach(meal => {
 
         const balance = meal.balance
-            ? `Баланс: ${meal.balance.protein} П • ${meal.balance.carbs} В • ${meal.balance.fat} М`
+            ? `${meal.balance.protein} П • ${meal.balance.carbs} У • ${meal.balance.fat} Ж`
             : "";
 
         html += `
-            <section class="meal-card">
 
-                <div class="meal-title">
-                    ${meal.type}
-                </div>
+        <section class="meal-card">
 
-                <div class="products">
-                    <ul>
-                        ${meal.products.map(product => `<li>${product}</li>`).join("")}
-                    </ul>
-                </div>
+            ${meal.image ? `
+            <div class="day-photo">
+                <img src="${meal.image}" alt="${meal.title}">
+            </div>
+            ` : ""}
 
-                ${balance ? `
-                    <div class="balance">
-                        ${balance}
-                    </div>
+            <div class="meal-title">
+                ${meal.type}
+            </div>
+
+            <div class="meal-content">
+
+                ${meal.title ? `
+                    <h3>${meal.title}</h3>
                 ` : ""}
 
-            </section>
+                ${meal.products.length ? `
+                <div class="products">
+                    <ul>
+                        ${meal.products.map(product => `
+                            <li>${product}</li>
+                        `).join("")}
+                    </ul>
+                </div>
+                ` : ""}
+
+                ${meal.recipe ? `
+                <div class="recipe">
+                    ${meal.recipe}
+                </div>
+                ` : ""}
+
+                ${balance ? `
+                <div class="balance">
+                    Баланс: ${balance}
+                </div>
+                ` : ""}
+
+            </div>
+
+        </section>
+
         `;
 
     });
@@ -88,13 +106,13 @@ function prevDay() {
 document.getElementById("nextDay").addEventListener("click", nextDay);
 document.getElementById("prevDay").addEventListener("click", prevDay);
 
-document.addEventListener("keydown", function (e) {
+document.addEventListener("keydown", function(e){
 
-    if (e.key === "ArrowRight") {
+    if(e.key === "ArrowRight"){
         nextDay();
     }
 
-    if (e.key === "ArrowLeft") {
+    if(e.key === "ArrowLeft"){
         prevDay();
     }
 
