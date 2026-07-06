@@ -16,7 +16,7 @@ const calendarData = {
 
                     type: "ЗАВТРАК",
 
-                    image: "images/day01_breakfast.jpg",
+                    image: "images/day01_collage.png",
 
                     title: "Ветчина из индейки с овсяной лепешкой",
 
