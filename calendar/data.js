@@ -144,7 +144,7 @@ const calendarData = {
 
         }
 
-    ]
+    ],
     {
     day: 2,
     weekday: "ВТОРНИК",
