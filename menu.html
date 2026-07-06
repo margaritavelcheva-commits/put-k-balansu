@@ -6,133 +6,134 @@
     <title>Зона Здоровья - Воскресенье</title>
     <style>
         :root {
-            --paper: #f9f7f2;
-            --prot: #2d5a27;
-            --carb: #b8860b;
-            --fat: #a0522d;
+            --paper: #fdfaf5;
+            --accent: #1b5e20;
+            --text: #2c3e50;
         }
         body { 
             font-family: 'Georgia', serif; 
-            background-color: #e5e0d8; 
+            background: #d7d0c5; 
             margin: 0; padding: 20px; 
-            display: flex; justify-content: center; 
+            display: flex; justify-content: center;
         }
         .magazine-page { 
-            max-width: 500px; width: 100%; 
+            max-width: 480px; width: 100%; 
             background: var(--paper); 
-            border-radius: 5px; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2); 
-            padding-bottom: 30px;
-            border: 1px solid #dcd1c1;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
         }
-        .top-banner { 
-            text-align: center; padding: 30px 10px; 
-            border-bottom: 2px double #dcd1c1; margin-bottom: 20px;
+        .main-header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px double #dcd1c1;
+            background: #fff;
         }
-        .week-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px; color: #8c7e6a; }
-        .day-title { font-size: 2.2rem; margin: 10px 0; color: #1b3d1b; font-weight: normal; }
-        .blocks-summary { font-size: 0.9rem; font-style: italic; color: #555; }
-
-        .meal-block { margin: 0 20px 25px 20px; position: relative; }
-        .meal-header { 
-            display: flex; align-items: center; gap: 10px; 
-            margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 5px;
-        }
-        .meal-icon { width: 30px; height: 30px; background: #1b3d1b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; }
-        .meal-name { font-weight: bold; font-size: 1.1rem; color: #1b3d1b; text-transform: uppercase; }
-
-        .content-flex { display: flex; gap: 15px; align-items: flex-start; }
-        .food-photo { width: 120px; height: 120px; border-radius: 10px; object-fit: cover; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid white; }
+        .week-num { font-size: 0.7rem; letter-spacing: 4px; color: #8c7e6a; text-transform: uppercase; }
+        .day-name { font-size: 2.8rem; margin: 10px 0; color: var(--accent); font-weight: normal; }
         
-        .nutrition-table { flex: 1; }
-        .row { display: flex; justify-content: space-between; padding: 4px 0; border-bottom: 1px dotted #ccc; font-size: 0.85rem; }
-        .tag { font-weight: bold; width: 80px; text-transform: uppercase; font-size: 0.7rem; }
-        .p-tag { color: var(--prot); }
-        .c-tag { color: var(--carb); }
-        .f-tag { color: var(--fat); }
-
-        .snack-grid { 
-            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px; 
-            padding: 15px; background: #f0ede6; border-radius: 10px;
+        .meal-wrap { padding: 20px; border-bottom: 1px solid #f0ede6; }
+        .meal-title { 
+            font-size: 1.2rem; font-weight: bold; color: var(--accent); 
+            display: flex; align-items: center; gap: 10px; margin-bottom: 15px;
+            border-left: 5px solid var(--accent); padding-left: 10px;
         }
-        .snack-box h4 { margin: 0 0 10px 0; font-size: 0.9rem; border-bottom: 1px solid #dcd1c1; }
+        
+        .flex-row { display: flex; gap: 20px; align-items: center; }
+        .food-img { 
+            width: 140px; height: 140px; 
+            border-radius: 50%; /* Кръгли снимки за по-елегантен вид */
+            object-fit: cover; 
+            border: 5px solid white; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .details { flex: 1; }
+        .data-row { 
+            display: flex; justify-content: space-between; 
+            padding: 5px 0; border-bottom: 1px dotted #ccc; 
+            font-size: 0.9rem; color: #444;
+        }
+        .data-row b { color: var(--accent); font-size: 0.7rem; text-transform: uppercase; }
 
-        .quote-box { 
-            margin: 30px 20px 0; text-align: center; border-top: 1px solid #dcd1c1; padding-top: 20px; 
-            font-style: italic; color: #6e6557; font-size: 0.9rem;
+        .snacks-block { 
+            margin: 20px; padding: 20px; 
+            background: #f0ede6; border-radius: 12px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+        }
+        .snack-item h4 { margin: 0 0 8px 0; font-size: 0.8rem; color: #8c7e6a; border-bottom: 1px solid #dcd1c1; }
+        .snack-text { font-size: 0.75rem; line-height: 1.4; color: #555; }
+
+        .motivation { 
+            padding: 30px 20px; text-align: center; 
+            font-style: italic; color: #6e6557; font-size: 0.95rem; 
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
 <div class="magazine-page">
-    <div class="top-banner">
-        <div class="week-label">ПЕРВАЯ НЕДЕЛЯ</div>
-        <h1 class="day-title">ВОСКРЕСЕНЬЕ</h1>
-        <div class="blocks-summary">11 ББ • 11 БУ • 11 БЖ</div>
+    <div class="main-header">
+        <div class="week-num">Первая неделя</div>
+        <h1 class="day-name">ВОСКРЕСЕНЬЕ</h1>
+        <div style="font-size: 0.8rem; color: #555;">11 ББ • 11 БУ • 11 БЖ</div>
     </div>
 
     <!-- ЗАВТРАК -->
-    <div class="meal-block">
-        <div class="meal-header">
-            <div class="meal-icon">☕</div>
-            <div class="meal-name">ЗАВТРАК</div>
-        </div>
-        <div class="content-flex">
-            <img src="images/breakfast_sun.jpg" onerror="this.src='[images.unsplash.com](https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=200)'" class="food-photo">
-            <div class="nutrition-table">
-                <div class="row"><span class="tag p-tag">Белки</span> <span>Ветчина инд. (90г)</span></div>
-                <div class="row"><span class="tag c-tag">Углеводы</span> <span>Хумус (120г)</span></div>
-                <div class="row"><span class="tag f-tag">Жиры</span> <span>Миндаль (9г)</span></div>
+    <div class="meal-wrap">
+        <div class="meal-title">ЗАВТРАК (3 Блока)</div>
+        <div class="flex-row">
+            <img src="[images.unsplash.com](https://images.unsplash.com/photo-1594968973184-9140fa307779?w=300)" class="food-img" alt="Индейка и хумус">
+            <div class="details">
+                <div class="data-row"><b>Белки</b> <span>Ветчина индейка (90г)</span></div>
+                <div class="data-row"><b>Углеводы</b> <span>Хумус (120г)</span></div>
+                <div class="data-row"><b>Жиры</b> <span>Миндаль (9г)</span></div>
             </div>
         </div>
     </div>
 
     <!-- ОБЕД -->
-    <div class="meal-block">
-        <div class="meal-header">
-            <div class="meal-icon">🍴</div>
-            <div class="meal-name">ОБЕД</div>
-        </div>
-        <div class="content-flex">
-            <img src="images/lunch_sun.jpg" onerror="this.src='[images.unsplash.com](https://images.unsplash.com/photo-1541518763531-d4a48f07f0ac?w=200)'" class="food-photo">
-            <div class="nutrition-table">
-                <div class="row"><span class="tag p-tag">Белки</span> <span>Тунец (84г)</span></div>
-                <div class="row"><span class="tag c-tag">Углеводы</span> <span>Тыква+Лепешки</span></div>
-                <div class="row"><span class="tag f-tag">Жиры</span> <span>Маслины (30г)</span></div>
+    <div class="meal-wrap">
+        <div class="meal-title">ОБЕД (3 Блока)</div>
+        <div class="flex-row">
+            <img src="[images.unsplash.com](https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300)" class="food-img" alt="Тунец и тыква">
+            <div class="details">
+                <div class="data-row"><b>Белки</b> <span>Тунец (84г)</span></div>
+                <div class="data-row"><b>Углеводы</b> <span>Тыква+Лепешки</span></div>
+                <div class="data-row"><b>Жиры</b> <span>Маслины (30г)</span></div>
             </div>
         </div>
     </div>
 
     <!-- УЖИН -->
-    <div class="meal-block">
-        <div class="meal-header">
-            <div class="meal-icon">🌙</div>
-            <div class="meal-name">УЖИН</div>
-        </div>
-        <div class="content-flex">
-            <img src="images/dinner_sun.jpg" onerror="this.src='[images.unsplash.com](https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=200)'" class="food-photo">
-            <div class="nutrition-table">
-                <div class="row"><span class="tag p-tag">Белки</span> <span>Кур. филе (84г)</span></div>
-                <div class="row"><span class="tag c-tag">Углеводы</span> <span>Брокколи+Лобио</span></div>
-                <div class="row"><span class="tag f-tag">Жиры</span> <span>Авокадо (30г)</span></div>
+    <div class="meal-wrap">
+        <div class="meal-title">УЖИН (3 Блока)</div>
+        <div class="flex-row">
+            <img src="[images.unsplash.com](https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=300)" class="food-img" alt="Курица и овощи">
+            <div class="details">
+                <div class="data-row"><b>Белки</b> <span>Кур. филе (84г)</span></div>
+                <div class="data-row"><b>Углеводы</b> <span>Брокколи+Лобио</span></div>
+                <div class="data-row"><b>Жиры</b> <span>Авокадо (30г)</span></div>
             </div>
         </div>
     </div>
 
-    <div class="snack-grid">
-        <div class="snack-box">
+    <!-- ПЕРЕКУСЫ -->
+    <div class="snacks-block">
+        <div class="snack-item">
             <h4>ПЕРЕКУС 1</h4>
-            <div class="row"><span>Белки 2, Яблоко 90, Орех 3</span></div>
+            <div class="snack-text">Яичные белки (2 шт), Яблоко (90г), Грецкий орех (3г)</div>
         </div>
-        <div class="snack-box">
+        <div class="snack-item">
             <h4>ПЕРЕКУС 2</h4>
-            <div class="row"><span>Творог 67, Вишня 70, Орех 3</span></div>
+            <div class="snack-text">Творог (67г), Вишня (70г), Фундук (3г)</div>
         </div>
     </div>
 
-    <div class="quote-box">
-        "Питание в гармонии с собой — просто, полезно, сбалансировано каждый день"
+    <div class="motivation">
+        "Питание в гармонии с собой — просто, полезно, сбалансировано каждый день."
     </div>
 </div>
 
