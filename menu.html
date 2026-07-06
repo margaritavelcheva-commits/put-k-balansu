@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зона Здоровья - Воскресенье</title>
     <style>
-        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f4f7f4; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { max-width: 450px; width: 100%; background: #ffffff; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; background-color: #f0f2f0; margin: 0; padding: 15px; display: flex; justify-content: center; }
+        .container { max-width: 450px; width: 100%; background: #ffffff; border-radius: 25px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
         
-        .header { background: #1b5e20; color: white; padding: 30px 20px; text-align: center; }
-        .header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 3px; font-weight: 900; }
-        .header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem; text-transform: uppercase; }
+        .header { background: #1b5e20; color: white; padding: 25px 15px; text-align: center; }
+        .header h1 { margin: 0; font-size: 1.6rem; letter-spacing: 2px; font-weight: 900; }
+        .header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.85rem; text-transform: uppercase; }
 
-        .meal-card { margin: 20px; background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
-        .meal-img { width: 100%; height: 160px; object-fit: cover; border-bottom: 2px solid #e8f5e9; }
+        .meal-card { margin: 15px; border-radius: 20px; overflow: hidden; border: 1px solid #eee; background: #fff; }
+        .meal-img { width: 100%; height: 180px; object-fit: cover; }
         
         .meal-content { padding: 15px; }
         .meal-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .meal-name { font-weight: 800; color: #1b5e20; font-size: 1.1rem; }
-        .blocks-badge { background: #e8f5e9; color: #2e7d32; font-size: 0.75rem; padding: 4px 12px; border-radius: 12px; font-weight: bold; }
+        .meal-name { font-weight: bold; color: #1b5e20; font-size: 1.1rem; }
+        .badge { background: #e8f5e9; color: #2e7d32; font-size: 0.7rem; padding: 4px 10px; border-radius: 10px; font-weight: bold; border: 1px solid #c8e6c9; }
 
         .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
-        .box { padding: 10px 5px; border-radius: 12px; text-align: center; font-size: 0.7rem; border-top: 4px solid #ccc; }
+        .box { padding: 10px 5px; border-radius: 10px; text-align: center; font-size: 0.75rem; border-top: 4px solid #ccc; background: #fafafa; }
         
-        .prot { background: #f9fff9; border-top-color: #4caf50; }
-        .carb { background: #fffdf2; border-top-color: #fbc02d; }
-        .fat { background: #fff8f2; border-top-color: #ff9800; }
+        .prot { border-top-color: #4caf50; }
+        .carb { border-top-color: #fbc02d; }
+        .fat { border-top-color: #ff9800; }
 
-        .label { display: block; font-weight: bold; font-size: 0.6rem; color: #888; text-transform: uppercase; margin-bottom: 5px; }
-        .val { font-weight: 700; color: #333; font-size: 0.75rem; display: block; margin-top: 2px; }
+        .label { display: block; font-weight: bold; font-size: 0.6rem; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+        .val { font-weight: 700; color: #333; font-size: 0.8rem; }
 
-        .footer { padding: 25px; font-size: 0.8rem; color: #777; text-align: center; background: #f9f9f9; line-height: 1.4; }
+        .snack-card { margin: 10px 15px; padding: 12px; background: #f9fbf9; border-radius: 15px; border-left: 5px solid #1b5e20; }
+        .footer { padding: 20px; font-size: 0.75rem; color: #777; text-align: center; background: #f4f4f4; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -38,14 +39,14 @@
 <div class="container">
     <div class="header">
         <h1>ВОСКРЕСЕНЬЕ</h1>
-        <p>Меню на 11 блоков • Неделя 1</p>
+        <p>Неделя 1 • Баланс 11 блоков</p>
     </div>
 
     <!-- ЗАВТРАК -->
     <div class="meal-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1524398205923-0130bf71f144?auto=format&fit=crop&w=500&q=80)" alt="Breakfast" class="meal-img">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80)" class="meal-img" alt="Завтрак">
         <div class="meal-content">
-            <div class="meal-info"><span class="meal-name">ЗАВТРАК</span><span class="blocks-badge">3 БЛОКА</span></div>
+            <div class="meal-info"><span class="meal-name">ЗАВТРАК</span><span class="badge">3 ББ • 3 БУ • 3 БЖ</span></div>
             <div class="grid">
                 <div class="box prot"><span class="label">Белки</span>Ветчина индейка<br><span class="val">90 г</span></div>
                 <div class="box carb"><span class="label">Углеводы</span>Хумус<br><span class="val">120 г</span></div>
@@ -56,9 +57,9 @@
 
     <!-- ОБЕД -->
     <div class="meal-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=500&q=80)" alt="Lunch" class="meal-img">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1541518763531-d4a48f07f0ac?auto=format&fit=crop&w=500&q=80)" class="meal-img" alt="Обед">
         <div class="meal-content">
-            <div class="meal-info"><span class="meal-name">ОБЕД</span><span class="blocks-badge">3 БЛОКА</span></div>
+            <div class="meal-info"><span class="meal-name">ОБЕД</span><span class="badge">3 ББ • 3 БУ • 3 БЖ</span></div>
             <div class="grid">
                 <div class="box prot"><span class="label">Белки</span>Тунец<br><span class="val">84 г</span></div>
                 <div class="box carb"><span class="label">Углеводы</span>Тыква (140г)+<br>Лепешки (38г)</div>
@@ -69,9 +70,9 @@
 
     <!-- УЖИН -->
     <div class="meal-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=500&q=80)" alt="Dinner" class="meal-img">
+        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=500&q=80)" class="meal-img" alt="Ужин">
         <div class="meal-content">
-            <div class="meal-info"><span class="meal-name">УЖИН</span><span class="blocks-badge">3 БЛОКА</span></div>
+            <div class="meal-info"><span class="meal-name">УЖИН</span><span class="badge">3 ББ • 3 БУ • 3 БЖ</span></div>
             <div class="grid">
                 <div class="box prot"><span class="label">Белки</span>Куриное филе<br><span class="val">84 г</span></div>
                 <div class="box carb"><span class="label">Углеводы</span>Брокколи(330г)+<br>Лобио(80г)</div>
@@ -80,26 +81,23 @@
         </div>
     </div>
 
-    <!-- ПЕРЕКУСЫ КОМБИНИРОВАННЫЕ -->
-    <div class="meal-card">
-        <div class="meal-content">
-            <div class="meal-info"><span class="meal-name">ПЕРЕКУС 1</span><span class="blocks-badge">1 БЛОК</span></div>
-            <div class="grid">
-                <div class="box prot"><span class="label">Белки</span>Яичные белки<br><span class="val">2 шт.</span></div>
-                <div class="box carb"><span class="label">Углеводы</span>Яблоко<br><span class="val">90 г</span></div>
-                <div class="box fat"><span class="label">Жиры</span>Греч. орех<br><span class="val">3 г</span></div>
-            </div>
+    <!-- ПЕРЕКУС 1 -->
+    <div class="snack-card">
+        <div class="meal-info"><span class="meal-name">ПЕРЕКУС 1</span><span class="badge">1 БЛОК</span></div>
+        <div class="grid">
+            <div class="box prot"><span class="label">Белки</span>Яичные белки<br><span class="val">2 шт.</span></div>
+            <div class="box carb"><span class="label">Углеводы</span>Яблоко<br><span class="val">90 г</span></div>
+            <div class="box fat"><span class="label">Жиры</span>Грец. орех<br><span class="val">3 г</span></div>
         </div>
     </div>
 
-    <div class="meal-card">
-        <div class="meal-content">
-            <div class="meal-info"><span class="meal-name">ПЕРЕКУС 2</span><span class="blocks-badge">1 БЛОК</span></div>
-            <div class="grid">
-                <div class="box prot"><span class="label">Белки</span>Творог<br><span class="val">67 г</span></div>
-                <div class="box carb"><span class="label">Углеводы</span>Вишня<br><span class="val">70 г</span></div>
-                <div class="box fat"><span class="label">Жиры</span>Фундук<br><span class="val">3 г</span></div>
-            </div>
+    <!-- ПЕРЕКУС 2 -->
+    <div class="snack-card">
+        <div class="meal-info"><span class="meal-name">ПЕРЕКУС 2</span><span class="badge">1 БЛОК</span></div>
+        <div class="grid">
+            <div class="box prot"><span class="label">Белки</span>Творог<br><span class="val">67 г</span></div>
+            <div class="box carb"><span class="label">Углеводы</span>Вишня<br><span class="val">70 г</span></div>
+            <div class="box fat"><span class="label">Жиры</span>Фундук<br><span class="val">3 г</span></div>
         </div>
     </div>
 
