@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зона Здоровья - Воскресенье</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f2; margin: 0; padding: 20px; display: flex; justify-content: center; }
+        .mobile-container { max-width: 400px; background: white; border: 1px solid #ddd; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .header { background: #1b5e20; color: white; padding: 20px; text-align: center; }
+        .header h1 { margin: 0; font-size: 24px; text-transform: uppercase; letter-spacing: 2px; }
+        .header p { margin: 5px 0 0; opacity: 0.9; font-size: 14px; }
+        
+        .meal-section { padding: 15px; border-bottom: 1px solid #eee; }
+        .meal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .meal-name { font-weight: bold; color: #333; font-size: 16px; }
+        .blocks-badge { background: #e8f5e9; color: #2e7d32; padding: 2px 8px; border-radius: 10px; font-size: 12px; font-weight: bold; border: 1px solid #2e7d32; }
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+        .item { padding: 8px; border-radius: 8px; text-align: center; font-size: 11px; line-height: 1.3; }
+        
+        .prot { background: #f1f8e9; border-top: 3px solid #4caf50; }
+        .carb { background: #fffde7; border-top: 3px solid #fbc02d; }
+        .fat { background: #fff3e0; border-top: 3px solid #ff9800; }
+        
+        .label { font-weight: bold; display: block; margin-bottom: 4px; font-size: 10px; color: #666; }
+        .footer { padding: 15px; font-size: 11px; color: #888; text-align: center; font-style: italic; }
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    <div class="header">
+        <h1>ВОСКРЕСЕНЬЕ</h1>
+        <p>ПЕРВАЯ НЕДЕЛЯ • 11 БЛОКОВ</p>
+    </div>
+
+    <!-- ЗАВТРАК -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-name">ЗАВТРАК</span>
+            <span class="blocks-badge">3 ББ • 3 БУ • 3 БЖ</span>
+        </div>
+        <div class="grid">
+            <div class="prot"><span class="label">БЕЛКИ</span>Ветчина индейка<br><b>90 г</b> (3 Б)</div>
+            <div class="carb"><span class="label">УГЛЕВОДЫ</span>Хумус<br><b>120 г</b> (3 У)</div>
+            <div class="fat"><span class="label">МАЗНИНИ</span>Миндаль<br><b>9 г</b> (3 Ж)</div>
+        </div>
+    </div>
+
+    <!-- ОБЕД -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-name">ОБЕД</span>
+            <span class="blocks-badge">3 ББ • 3 БУ • 3 БЖ</span>
+        </div>
+        <div class="grid">
+            <div class="prot"><span class="label">БЕЛКИ</span>Тунец<br><b>84 г</b> (3 Б)</div>
+            <div class="carb"><span class="label">УГЛЕВОДЫ</span>Тыква запечённая<br><b>360 г</b> (3 У)</div>
+            <div class="fat"><span class="label">МАЗНИНИ</span>Маслины<br><b>30 г</b> (3 Ж)</div>
+        </div>
+    </div>
+
+    <!-- УЖИН -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-name">УЖИН</span>
+            <span class="blocks-badge">3 ББ • 3 БУ • 3 БЖ</span>
+        </div>
+        <div class="grid">
+            <div class="prot"><span class="label">БЕЛКИ</span>Куриное филе<br><b>84 г</b> (3 Б)</div>
+            <div class="carb"><span class="label">УГЛЕВОДЫ</span>Брокколи (330г)<br>Лобио (80г) (3 У)</div>
+            <div class="fat"><span class="label">МАЗНИНИ</span>Авокадо<br><b>30 г</b> (3 Ж)</div>
+        </div>
+    </div>
+
+    <!-- ПЕРЕКУС 1 -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-name">ПЕРЕКУС 1</span>
+            <span class="blocks-badge">1 ББ • 1 БУ • 1 БЖ</span>
+        </div>
+        <div class="grid">
+            <div class="prot"><span class="label">БЕЛКИ</span>Яйцо белки<br><b>2 шт</b> (1 Б)</div>
+            <div class="carb"><span class="label">УГЛЕВОДЫ</span>Яблоко<br><b>90 г</b> (1 У)</div>
+            <div class="fat"><span class="label">МАЗНИНИ</span>Грецкий орех<br><b>3 г</b> (1 Ж)</div>
+        </div>
+    </div>
+
+    <!-- ПЕРЕКУС 2 -->
+    <div class="meal-section">
+        <div class="meal-header">
+            <span class="meal-name">ПЕРЕКУС 2</span>
+            <span class="blocks-badge">1 ББ • 1 БУ • 1 БЖ</span>
+        </div>
+        <div class="grid">
+            <div class="prot"><span class="label">БЕЛКИ</span>Творог<br><b>67 г</b> (1 Б)</div>
+            <div class="carb"><span class="label">УГЛЕВОДЫ</span>Вишня<br><b>70 г</b> (1 У)</div>
+            <div class="fat"><span class="label">МАЗНИНИ</span>Фундук<br><b>3 г</b> (1 Ж)</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Питание по Зоната – баланс белков, углеводов и жиров.
+    </div>
+</div>
+
+</body>
+</html>
