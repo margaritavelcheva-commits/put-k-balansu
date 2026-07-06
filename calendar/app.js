@@ -13,25 +13,30 @@ function renderDay(index){
 
     const day = calendarData.days[index];
 
-    // Премахнато е показването на месеца
     month.textContent = "";
-
     dayNumber.textContent = day.day;
     weekday.textContent = day.weekday;
 
     let html = "";
 
     if(day.image){
-
         html += `
         <div class="day-photo">
             <img src="${day.image}" alt="${day.weekday}">
         </div>
         `;
-
     }
 
     day.meals.forEach(meal=>{
+
+        let balance = "";
+
+        if(meal.balance){
+
+            balance =
+                `Баланс: ${meal.balance.protein} П • ${meal.balance.carbs} В • ${meal.balance.fat} М`;
+
+        }
 
         html += `
 
@@ -54,9 +59,7 @@ function renderDay(index){
             </div>
 
             <div class="balance">
-
-                ${meal.balance ?? ""}
-
+                ${balance}
             </div>
 
         </section>
