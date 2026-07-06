@@ -497,8 +497,6 @@ const calendarData = {
         }
     ]
 },
-
-};
 {
     day: 6,
     weekday: "СУББОТА",
