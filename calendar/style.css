@@ -42,11 +42,12 @@ body{
 
 /* HEADER */
 
+/* HEADER */
+
 .page-header{
 
-    text-align:center;
+    display:none;
 
-    margin-bottom:30px;
 }
 
 .month{
