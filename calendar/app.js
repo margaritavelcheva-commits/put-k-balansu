@@ -19,61 +19,15 @@ function renderDay(index) {
 
     let html = "";
 
-    day.meals.forEach(meal => {
+    if (day.meals.length > 0 && day.meals[0].image) {
 
-        const balance = meal.balance
-            ? `${meal.balance.protein} П • ${meal.balance.carbs} У • ${meal.balance.fat} Ж`
-            : "";
-
-        html += `
-
-        <section class="meal-card">
-
-            ${meal.image ? `
+        html = `
             <div class="day-photo">
-                <img src="${meal.image}" alt="${meal.title}">
+                <img src="${day.meals[0].image}" alt="${day.weekday}">
             </div>
-            ` : ""}
-
-            <div class="meal-title">
-                ${meal.type}
-            </div>
-
-            <div class="meal-content">
-
-                ${meal.title ? `
-                    <h3>${meal.title}</h3>
-                ` : ""}
-
-                ${meal.products.length ? `
-                <div class="products">
-                    <ul>
-                        ${meal.products.map(product => `
-                            <li>${product}</li>
-                        `).join("")}
-                    </ul>
-                </div>
-                ` : ""}
-
-                ${meal.recipe ? `
-                <div class="recipe">
-                    ${meal.recipe}
-                </div>
-                ` : ""}
-
-                ${balance ? `
-                <div class="balance">
-                    Баланс: ${balance}
-                </div>
-                ` : ""}
-
-            </div>
-
-        </section>
-
         `;
 
-    });
+    }
 
     meals.innerHTML = html;
 
