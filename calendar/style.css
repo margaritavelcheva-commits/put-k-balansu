@@ -206,7 +206,7 @@ body{
 
     align-items:center;
 
-    margin-bottom:30px;
+    margin-bottom:16px;
 
 }
 
@@ -365,5 +365,20 @@ footer{
     color:#999;
 
     font-size:14px;
+
+}
+.day-photo{
+
+    margin-top:0;
+
+}
+
+.day-photo img{
+
+    display:block;
+
+    width:100%;
+
+    border-radius:16px;
 
 }
