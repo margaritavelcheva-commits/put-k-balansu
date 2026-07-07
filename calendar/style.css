@@ -42,8 +42,6 @@ body{
 
 /* HEADER */
 
-/* HEADER */
-
 .page-header{
 
     display:none;
@@ -368,7 +366,4 @@ footer{
 
     font-size:14px;
 
-}
-#month{
-    display:none;
 }
