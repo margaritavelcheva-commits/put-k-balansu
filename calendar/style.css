@@ -16,14 +16,14 @@ body{
     color:#222;
     display:flex;
     justify-content:center;
-    padding:10px;
+    padding:20px;
 }
 /* PAGE */
 .page{
     width:210mm;
     max-width:100%;
     background:white;
-    padding:8mm 14mm 14mm 14mm;
+    padding:12mm 18mm 18mm 18mm;
     box-shadow:0 8px 30px rgba(0,0,0,.12);
 }
 /* HEADER */
@@ -103,28 +103,22 @@ body{
     color:#888;
     font-size:18px;
 }
-/* NAVIGATION — за нормалните дни, стои си горе */
+/* NAVIGATION */
 .day-navigation{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-bottom:12px;
-    position:sticky;
-    top:0;
-    z-index:10;
-    background:white;
-    padding:10px 0;
+    margin-bottom:16px;
 }
 .day-navigation button{
     background:#5f8444;
     color:white;
     border:none;
     border-radius:10px;
-    padding:10px 20px;
-    font-size:15px;
+    padding:12px 24px;
+    font-size:16px;
     cursor:pointer;
     transition:.2s;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 .day-navigation button:hover{
     background:#46662f;
@@ -138,3 +132,87 @@ body{
     color:#888;
 }
 #dayNumber{
+    font-size:64px;
+    font-weight:bold;
+    line-height:1;
+}
+#weekday{
+    margin-top:8px;
+    font-size:26px;
+    color:#56753f;
+    font-weight:bold;
+}
+/* IMAGE — стандартна версия, по цялата ширина, без хоризонтален overflow */
+.day-photo{
+    width:100%;
+    border-radius:16px;
+    margin-bottom:20px;
+    margin-top:0;
+    overflow:hidden;
+    position:relative;
+}
+.day-photo img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:16px;
+}
+.meal-title{
+    background:#6d924d;
+    color:white;
+    padding:14px 18px;
+    font-size:22px;
+    margin:0;
+}
+.products{
+    padding:18px;
+    line-height:1.8;
+}
+.balance{
+    background:#f4f8ef;
+    padding:15px 18px;
+    color:#55773c;
+    font-weight:bold;
+    border-top:1px solid #e2ead8;
+}
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+}
+.day-photo::before,
+.day-photo::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:23%;
+    height:10.5%;
+    background:white;
+    z-index:2;
+}
+.day-photo::before{
+    left:0;
+}
+.day-photo::after{
+    right:0;
+}
+
+/* КОРИЦА — само ограничава височината, за да не е прекалено дълга, без бели ленти */
+body.cover-page .day-photo{
+    max-height:70vh;
+    display:flex;
+    justify-content:center;
+    background:white;
+}
+body.cover-page .day-photo img{
+    width:auto;
+    max-width:100%;
+    height:100%;
+    max-height:70vh;
+    object-fit:contain;
+}
+body.cover-page .day-photo::before,
+body.cover-page .day-photo::after{
+    display:none;
+}
