@@ -159,6 +159,7 @@ body{
     border-radius:16px;
     margin-bottom:20px;
     overflow:hidden;
+    position:relative;
 }
 .day-photo img{
     width:100%;
@@ -208,4 +209,22 @@ footer{
     display:block;
     width:100%;
     border-radius:16px;
+}
+
+/* HIDE BUTTONS BAKED INTO IMAGE — covers just the top-left and top-right corners */
+.day-photo::before,
+.day-photo::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:23%;
+    height:10.5%;
+    background:white;
+    z-index:2;
+}
+.day-photo::before{
+    left:0;
+}
+.day-photo::after{
+    right:0;
 }
