@@ -70,6 +70,72 @@ const calendarData = {
                     }
                 }
             ]
+        },
+        {
+            day: 2,
+            weekday: "ВТОРНИК",
+            meals: [
+                {
+                    type: "ЗАВТРАК",
+                    image: "images/day02.png",
+                    title: "",
+                    products: [],
+                    recipe: "",
+                    balance: {
+                        protein: 3,
+                        carbs: 3,
+                        fat: 3
+                    }
+                },
+                {
+                    type: "ПЕРЕКУС",
+                    image: "images/day02_snack1.jpg",
+                    title: "",
+                    products: [],
+                    recipe: "",
+                    balance: {
+                        protein: 1,
+                        carbs: 1,
+                        fat: 1
+                    }
+                },
+                {
+                    type: "ОБЕД",
+                    image: "images/day02_lunch.jpg",
+                    title: "",
+                    products: [],
+                    recipe: "",
+                    balance: {
+                        protein: 3,
+                        carbs: 3,
+                        fat: 3
+                    }
+                },
+                {
+                    type: "ПЕРЕКУС",
+                    image: "images/day02_snack2.jpg",
+                    title: "",
+                    products: [],
+                    recipe: "",
+                    balance: {
+                        protein: 1,
+                        carbs: 1,
+                        fat: 1
+                    }
+                },
+                {
+                    type: "УЖИН",
+                    image: "images/day02_dinner.jpg",
+                    title: "",
+                    products: [],
+                    recipe: "",
+                    balance: {
+                        protein: 3,
+                        carbs: 3,
+                        fat: 3
+                    }
+                }
+            ]
         }
     ]
 };
