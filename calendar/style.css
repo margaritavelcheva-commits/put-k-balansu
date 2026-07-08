@@ -103,15 +103,12 @@ body{
     color:#888;
     font-size:18px;
 }
-/* NAVIGATION — залепена горе, винаги видима */
+/* NAVIGATION */
 .day-navigation{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:16px;
-    position:sticky;
-    top:10px;
-    z-index:10;
 }
 .day-navigation button{
     background:#5f8444;
@@ -122,7 +119,6 @@ body{
     font-size:16px;
     cursor:pointer;
     transition:.2s;
-    box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
 .day-navigation button:hover{
     background:#46662f;
@@ -146,7 +142,7 @@ body{
     color:#56753f;
     font-weight:bold;
 }
-/* IMAGE — по цялата ширина, без бели ленти, естествена височина */
+/* IMAGE */
 .day-photo{
     width:100%;
     border-radius:16px;
@@ -168,4 +164,40 @@ body{
     font-size:22px;
     margin:0;
 }
-.produ
+.products{
+    padding:18px;
+    line-height:1.8;
+}
+.balance{
+    background:#f4f8ef;
+    padding:15px 18px;
+    color:#55773c;
+    font-weight:bold;
+    border-top:1px solid #e2ead8;
+}
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+}
+.day-photo::before,
+.day-photo::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:23%;
+    height:10.5%;
+    background:white;
+    z-index:2;
+}
+.day-photo::before{
+    left:0;
+}
+.day-photo::after{
+    right:0;
+}
+body.cover-page .day-photo::before,
+body.cover-page .day-photo::after{
+    display:none;
+}
