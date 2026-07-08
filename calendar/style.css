@@ -143,18 +143,23 @@ body{
     color:#56753f;
     font-weight:bold;
 }
+/* IMAGE — фиксирана височина за всички снимки (корица + дни) */
 .day-photo{
     width:100%;
+    height:700px;
     border-radius:16px;
     margin-bottom:20px;
+    margin-top:0;
     overflow:hidden;
     position:relative;
-    margin-top:0;
+    background:white;
 }
 .day-photo img{
     width:100%;
+    height:100%;
     display:block;
     border-radius:16px;
+    object-fit:contain;
 }
 .meal-title{
     background:#6d924d;
