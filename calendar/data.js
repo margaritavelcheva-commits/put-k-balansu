@@ -142,8 +142,4 @@ const calendarData = {
 
             ]
 
-        }
-
-    ]
-
-};
+        },
