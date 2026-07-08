@@ -103,12 +103,15 @@ body{
     color:#888;
     font-size:18px;
 }
-/* NAVIGATION */
+/* NAVIGATION — залепена горе, винаги видима, дори при дълга страница */
 .day-navigation{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:16px;
+    position:sticky;
+    top:10px;
+    z-index:10;
 }
 .day-navigation button{
     background:#5f8444;
@@ -119,6 +122,7 @@ body{
     font-size:16px;
     cursor:pointer;
     transition:.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
 .day-navigation button:hover{
     background:#46662f;
@@ -142,7 +146,7 @@ body{
     color:#56753f;
     font-weight:bold;
 }
-/* IMAGE — стандартна версия, по цялата ширина, без хоризонтален overflow */
+/* IMAGE — по цялата ширина, без бели ленти, естествена височина */
 .day-photo{
     width:100%;
     border-radius:16px;
@@ -196,21 +200,6 @@ footer{
 }
 .day-photo::after{
     right:0;
-}
-
-/* КОРИЦА — само ограничава височината, за да не е прекалено дълга, без бели ленти */
-body.cover-page .day-photo{
-    max-height:70vh;
-    display:flex;
-    justify-content:center;
-    background:white;
-}
-body.cover-page .day-photo img{
-    width:auto;
-    max-width:100%;
-    height:100%;
-    max-height:70vh;
-    object-fit:contain;
 }
 body.cover-page .day-photo::before,
 body.cover-page .day-photo::after{
