@@ -1,11 +1,15 @@
-/* КОРИЦА — запълва цялата ширина и височина на екрана, центрирано отрязване */
+/* КОРИЦА — нулев скрол, минимални бели ленти отстрани */
 body.cover-page .day-photo{
-    height: calc(100vh - 100px);
-    width: 100%;
+    height: calc(100vh - 90px);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 body.cover-page .day-photo img{
-    width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
 }
