@@ -223,19 +223,4 @@ footer{
     background:white;
     z-index:2;
 }
-.day-photo::before{
-    left:0;
-}
-.day-photo::after{
-    right:0;
-}
-
-/* Само за корицата — премества бутоните ПОД снимката */
-body.cover-page .day-navigation {
-    order: 2;
-    margin-bottom: 0;
-    margin-top: 20px;
-}
-body.cover-page #meals {
-    order: 1;
-}
+.day-
