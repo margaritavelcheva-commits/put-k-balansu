@@ -1,15 +1,171 @@
-/* КОРИЦА — нулев скрол, минимални бели ленти отстрани */
-body.cover-page .day-photo{
-    height: calc(100vh - 90px);
-    width: auto;
-    display: flex;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+/* ==========================
+   MONTHLY CALENDAR MASTER
+   Version 0.1
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-body.cover-page .day-photo img{
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
+body{
+    background:#ececec;
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+    color:#222;
+    display:flex;
+    justify-content:center;
+    padding:20px;
 }
+/* PAGE */
+.page{
+    width:210mm;
+    max-width:100%;
+    background:white;
+    padding:12mm 18mm 18mm 18mm;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+/* HEADER */
+.page-header{
+    display:none;
+}
+.month{
+    font-size:18px;
+    letter-spacing:3px;
+    color:#888;
+    margin-bottom:10px;
+}
+.day-number{
+    font-size:72px;
+    font-weight:700;
+    line-height:1;
+}
+.weekday{
+    font-size:26px;
+    letter-spacing:2px;
+    margin-top:12px;
+    font-weight:600;
+}
+#meals{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
+}
+.meal-card{
+    border:1px solid #dddddd;
+    border-radius:14px;
+    overflow:hidden;
+    background:white;
+}
+.meal-image{
+    width:100%;
+    height:220px;
+    background:#efefef;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#999;
+    font-size:18px;
+}
+.meal-content{
+    padding:18px;
+}
+.meal-title{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:12px;
+}
+.products{
+    margin-bottom:14px;
+    line-height:1.6;
+}
+.recipe{
+    line-height:1.6;
+    color:#444;
+}
+.balance{
+    margin-top:18px;
+    font-weight:700;
+    color:#4f7f37;
+}
+.hero{
+    text-align:center;
+    margin-bottom:35px;
+}
+.hero h1{
+    font-size:44px;
+    color:#55773c;
+    font-family:Georgia,serif;
+}
+.subtitle{
+    margin-top:10px;
+    color:#888;
+    font-size:18px;
+}
+/* NAVIGATION — залепена горе, винаги видима */
+.day-navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
+    position:sticky;
+    top:10px;
+    z-index:10;
+}
+.day-navigation button{
+    background:#5f8444;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px 24px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.2s;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
+.day-navigation button:hover{
+    background:#46662f;
+}
+.day-title{
+    text-align:center;
+}
+#month{
+    font-size:18px;
+    letter-spacing:2px;
+    color:#888;
+}
+#dayNumber{
+    font-size:64px;
+    font-weight:bold;
+    line-height:1;
+}
+#weekday{
+    margin-top:8px;
+    font-size:26px;
+    color:#56753f;
+    font-weight:bold;
+}
+/* IMAGE — по цялата ширина, без бели ленти, естествена височина */
+.day-photo{
+    width:100%;
+    border-radius:16px;
+    margin-bottom:20px;
+    margin-top:0;
+    overflow:hidden;
+    position:relative;
+}
+.day-photo img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:16px;
+}
+.meal-title{
+    background:#6d924d;
+    color:white;
+    padding:14px 18px;
+    font-size:22px;
+    margin:0;
+}
+.produ
