@@ -15,7 +15,20 @@ function renderDay(index) {
     weekday.textContent = day.weekday;
 
     let html = "";
-    if (day.meals.length > 0 && day.meals[0].image) {
+
+    if (day.isMenu) {
+        html = `
+            <div class="week-menu">
+                <h2>Выберите неделю</h2>
+                <div class="week-buttons">
+                    <button onclick="goToWeek(1)">Неделя 1</button>
+                    <button onclick="goToWeek(2)">Неделя 2</button>
+                    <button onclick="goToWeek(3)">Неделя 3</button>
+                    <button onclick="goToWeek(4)">Неделя 4</button>
+                </div>
+            </div>
+        `;
+    } else if (day.meals.length > 0 && day.meals[0].image) {
         html = `
             <div class="day-photo">
                 <img src="${day.meals[0].image}" alt="${day.weekday}">
@@ -27,8 +40,14 @@ function renderDay(index) {
     // Скрий бутона "Предыдущий" само на корицата (индекс 0)
     prevBtn.style.visibility = (index === 0) ? "hidden" : "visible";
 
-    // Отбележи корицата, за да преместим бутоните във визуалната й празна зона
+    // Отбележи корицата, за да важат специалните ѝ CSS правила
     document.body.classList.toggle("cover-page", index === 0);
+}
+
+function goToWeek(weekNum) {
+    const startOfWeek1 = 2; // индекс на Ден 1 в масива
+    currentDay = startOfWeek1 + (weekNum - 1) * 7;
+    renderDay(currentDay);
 }
 
 function nextDay() {
