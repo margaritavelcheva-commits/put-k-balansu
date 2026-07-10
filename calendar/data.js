@@ -8,6 +8,12 @@ const calendarData = {
                 { type: "", image: "images/day00.png", title: "", products: [], recipe: "", balance: { protein: 0, carbs: 0, fat: 0 } }
             ]
         },
+        {
+            day: "",
+            weekday: "",
+            isMenu: true,
+            meals: []
+        },
         { day: 1, weekday: "ПОНЕДЕЛЬНИК", meals: [ { type: "ЗАВТРАК", image: "images/day01_collage.png", title: "", products: [], recipe: "", balance: { protein: 3, carbs: 3, fat: 3 } } ] },
         { day: 2, weekday: "ВТОРНИК", meals: [ { type: "ЗАВТРАК", image: "images/day02.png", title: "", products: [], recipe: "", balance: { protein: 3, carbs: 3, fat: 3 } } ] },
         { day: 3, weekday: "СРЕДА", meals: [ { type: "ЗАВТРАК", image: "images/day03.png", title: "", products: [], recipe: "", balance: { protein: 3, carbs: 3, fat: 3 } } ] },
