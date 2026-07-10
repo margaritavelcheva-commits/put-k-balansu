@@ -7,6 +7,7 @@ const dayNumber = document.getElementById("dayNumber");
 const weekday = document.getElementById("weekday");
 const meals = document.getElementById("meals");
 const prevBtn = document.getElementById("prevDay");
+const homeBtn = document.getElementById("homeBtn");
 
 function renderDay(index) {
     const day = calendarData.days[index];
@@ -40,6 +41,9 @@ function renderDay(index) {
     // Скрий бутона "Предыдущий" само на корицата (индекс 0)
     prevBtn.style.visibility = (index === 0) ? "hidden" : "visible";
 
+    // Скрий бутона "Меню" на корицата и на самата менюта страница
+    homeBtn.style.visibility = (index === 0 || index === 1) ? "hidden" : "visible";
+
     // Отбележи корицата, за да важат специалните ѝ CSS правила
     document.body.classList.toggle("cover-page", index === 0);
 }
@@ -47,6 +51,11 @@ function renderDay(index) {
 function goToWeek(weekNum) {
     const startOfWeek1 = 2; // индекс на Ден 1 в масива
     currentDay = startOfWeek1 + (weekNum - 1) * 7;
+    renderDay(currentDay);
+}
+
+function goHome() {
+    currentDay = 1; // индекс на менюто "Выберите неделю"
     renderDay(currentDay);
 }
 
@@ -66,6 +75,7 @@ function prevDay() {
 }
 document.getElementById("nextDay").addEventListener("click", nextDay);
 document.getElementById("prevDay").addEventListener("click", prevDay);
+homeBtn.addEventListener("click", goHome);
 document.addEventListener("keydown", function(e){
     if(e.key === "ArrowRight"){
         nextDay();
