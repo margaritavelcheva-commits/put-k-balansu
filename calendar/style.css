@@ -139,3 +139,121 @@ body{
 #weekday{
     margin-top:8px;
     font-size:26px;
+    color:#56753f;
+    font-weight:bold;
+}
+/* IMAGE */
+.day-photo{
+    width:100%;
+    border-radius:16px;
+    margin-bottom:20px;
+    margin-top:0;
+    overflow:hidden;
+    position:relative;
+}
+.day-photo img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:16px;
+}
+.meal-title{
+    background:#6d924d;
+    color:white;
+    padding:14px 18px;
+    font-size:22px;
+    margin:0;
+}
+.products{
+    padding:18px;
+    line-height:1.8;
+}
+.balance{
+    background:#f4f8ef;
+    padding:15px 18px;
+    color:#55773c;
+    font-weight:bold;
+    border-top:1px solid #e2ead8;
+}
+footer{
+    margin-top:40px;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+}
+.day-photo::before,
+.day-photo::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width:23%;
+    height:10.5%;
+    background:white;
+    z-index:2;
+}
+.day-photo::before{
+    left:0;
+}
+.day-photo::after{
+    right:0;
+}
+body.cover-page .day-photo::before,
+body.cover-page .day-photo::after{
+    display:none;
+}
+
+/* Страница "Выберите неделю" */
+.week-menu{
+    text-align:center;
+    padding:70px 30px;
+    background:linear-gradient(135deg, #faf7f0 0%, #f0ede2 100%);
+    border-radius:20px;
+    border:1px solid #e2ead8;
+}
+.week-menu h2{
+    font-size:34px;
+    color:#55773c;
+    font-family:Georgia,serif;
+    margin-bottom:8px;
+    letter-spacing:1px;
+}
+.week-menu h2::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:2px;
+    background:#c9a35a;
+    margin:18px auto 40px auto;
+}
+.week-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    max-width:520px;
+    margin:0 auto;
+}
+.week-buttons button{
+    background:white;
+    color:#46662f;
+    border:2px solid #5f8444;
+    border-radius:16px;
+    padding:28px 20px;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+    position:relative;
+}
+.week-buttons button::before{
+    content:"🌿";
+    display:block;
+    font-size:24px;
+    margin-bottom:8px;
+}
+.week-buttons button:hover{
+    background:#5f8444;
+    color:white;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
