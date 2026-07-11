@@ -47,3 +47,14 @@ function prevDay(){
 
 langButtons.forEach(btn => {
     btn.addEventListener("click", () => {
+        currentLang = btn.dataset.lang;
+        langButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderDay(currentDay);
+    });
+});
+
+nextBtn.addEventListener("click", nextDay);
+prevBtn.addEventListener("click", prevDay);
+
+renderDay(currentDay);
