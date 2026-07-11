@@ -87,3 +87,44 @@ body{
 [dir="rtl"] .day-navigation{
     direction:rtl;
 }
+
+/* Страница за избор на седмица */
+.week-menu{
+    text-align:center;
+    padding:70px 30px;
+    background:linear-gradient(135deg, #faf7f0 0%, #f0ede2 100%);
+    border-radius:20px;
+    border:1px solid #e2ead8;
+}
+.week-menu h2{
+    font-size:34px;
+    color:#55773c;
+    font-family:Georgia,serif;
+    margin-bottom:8px;
+    letter-spacing:1px;
+}
+.week-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+    max-width:520px;
+    margin:30px auto 0 auto;
+}
+.week-buttons button{
+    background:white;
+    color:#46662f;
+    border:2px solid #5f8444;
+    border-radius:16px;
+    padding:28px 20px;
+    font-size:22px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 4px 14px rgba(0,0,0,.06);
+}
+.week-buttons button:hover{
+    background:#5f8444;
+    color:white;
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
