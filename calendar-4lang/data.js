@@ -1,6 +1,12 @@
 const translations = {
     ru: {
         weekTitle: "Первая неделя",
+        menuTitle: "Выберите неделю",
+        menuBtn: "🏠 Меню",
+        week1: "Неделя 1",
+        week2: "Неделя 2",
+        week3: "Неделя 3",
+        week4: "Неделя 4",
         prev: "◀ Предыдущий",
         next: "Следующий ▶",
         weekdays: { sunday: "Воскресенье", monday: "Понедельник", tuesday: "Вторник", wednesday: "Среда", thursday: "Четверг", friday: "Пятница", saturday: "Суббота" },
@@ -8,6 +14,12 @@ const translations = {
     },
     en: {
         weekTitle: "Week 1",
+        menuTitle: "Choose a Week",
+        menuBtn: "🏠 Menu",
+        week1: "Week 1",
+        week2: "Week 2",
+        week3: "Week 3",
+        week4: "Week 4",
         prev: "◀ Previous",
         next: "Next ▶",
         weekdays: { sunday: "Sunday", monday: "Monday", tuesday: "Tuesday", wednesday: "Wednesday", thursday: "Thursday", friday: "Friday", saturday: "Saturday" },
@@ -15,6 +27,12 @@ const translations = {
     },
     bg: {
         weekTitle: "Първа седмица",
+        menuTitle: "Изберете седмица",
+        menuBtn: "🏠 Меню",
+        week1: "Седмица 1",
+        week2: "Седмица 2",
+        week3: "Седмица 3",
+        week4: "Седмица 4",
         prev: "◀ Предишен",
         next: "Следващ ▶",
         weekdays: { sunday: "Неделя", monday: "Понеделник", tuesday: "Вторник", wednesday: "Сряда", thursday: "Четвъртък", friday: "Петък", saturday: "Събота" },
@@ -22,6 +40,12 @@ const translations = {
     },
     he: {
         weekTitle: "שבוע ראשון",
+        menuTitle: "בחר שבוע",
+        menuBtn: "🏠 תפריט",
+        week1: "שבוע 1",
+        week2: "שבוע 2",
+        week3: "שבוע 3",
+        week4: "שבוע 4",
         prev: "◀ הקודם",
         next: "הבא ▶",
         weekdays: { sunday: "ראשון", monday: "שני", tuesday: "שלישי", wednesday: "רביעי", thursday: "חמישי", friday: "שישי", saturday: "שבת" },
@@ -31,6 +55,9 @@ const translations = {
 
 const calendarData = {
     days: [
+        {
+            isMenu: true
+        },
         {
             weekdayKey: "sunday",
             image: "../calendar/images/day29.png",
