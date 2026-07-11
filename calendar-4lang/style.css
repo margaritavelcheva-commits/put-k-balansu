@@ -1,1 +1,89 @@
-
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{
+    background:#ececec;
+    font-family:"Segoe UI", Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+.page{
+    width:210mm;
+    max-width:100%;
+    background:white;
+    padding:20px 24px;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+.lang-switch{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:16px;
+}
+.lang-btn{
+    background:white;
+    border:2px solid #5f8444;
+    color:#46662f;
+    border-radius:8px;
+    padding:8px 16px;
+    cursor:pointer;
+    font-weight:600;
+}
+.lang-btn.active{
+    background:#5f8444;
+    color:white;
+}
+.day-navigation{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:16px;
+}
+.day-navigation button{
+    background:#5f8444;
+    color:white;
+    border:none;
+    border-radius:10px;
+    padding:12px 24px;
+    font-size:16px;
+    cursor:pointer;
+}
+.weekday-title{
+    text-align:center;
+    font-size:36px;
+    color:#56753f;
+}
+.week-title{
+    text-align:center;
+    color:#888;
+    margin-bottom:20px;
+}
+.day-photo{
+    margin-bottom:20px;
+}
+.day-photo img{
+    width:100%;
+    border-radius:16px;
+    display:block;
+}
+.meal-block{
+    margin-bottom:16px;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid #ddd;
+}
+.meal-block h3{
+    background:#6d924d;
+    color:white;
+    padding:10px 16px;
+}
+.meal-block ul{
+    list-style:none;
+    padding:14px 16px;
+}
+.meal-block li{
+    padding:4px 0;
+    line-height:1.5;
+}
+[dir="rtl"] .meal-block ul,
+[dir="rtl"] .day-navigation{
+    direction:rtl;
+}
