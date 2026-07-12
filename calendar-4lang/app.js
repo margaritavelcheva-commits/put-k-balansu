@@ -12,11 +12,24 @@ function renderDay(index) {
     const t = translations[currentLang];
 
     document.documentElement.setAttribute("dir", currentLang === "he" ? "rtl" : "ltr");
+
+    // КОРИЦА — само стрелка напред, без Предыдущий/Меню
+    if (day.isCover) {
+        prevBtn.style.visibility = "hidden";
+        homeBtn.style.visibility = "hidden";
+        nextBtn.style.visibility = "visible";
+        nextBtn.textContent = "→";
+        dayContainer.innerHTML = `
+            <div class="cover-photo"><img src="${day.image}" alt=""></div>
+        `;
+        return;
+    }
+
     prevBtn.textContent = t.prev;
     nextBtn.textContent = t.next;
     homeBtn.textContent = t.menuBtn;
 
-    // Скрий бутоните Предыдущий/Следующий на самата меню страница
+    // Скрий бутоните Предыдущий/Меню на самата меню страница
     prevBtn.style.visibility = day.isMenu ? "hidden" : "visible";
     nextBtn.style.visibility = day.isMenu ? "hidden" : "visible";
     homeBtn.style.visibility = day.isMenu ? "hidden" : "visible";
@@ -59,7 +72,7 @@ function renderDay(index) {
 }
 
 function goToWeek(weekNum) {
-    const startOfWeek1 = 1; // индекс на Ден 1 в масива (0 е менюто)
+    const startOfWeek1 = 2; // индекс на Ден 1 (0=корица, 1=меню)
     const target = startOfWeek1 + (weekNum - 1) * 7;
     if (target >= calendarData.days.length) {
         alert("Эта неделя еще не готова");
@@ -70,7 +83,7 @@ function goToWeek(weekNum) {
 }
 
 function goHome() {
-    currentDay = 0; // индекс на менюто
+    currentDay = 1; // индекс на менюто
     renderDay(currentDay);
 }
 
