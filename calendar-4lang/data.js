@@ -56,6 +56,10 @@ const translations = {
 const calendarData = {
     days: [
         {
+            isCover: true,
+            image: "cover.png"
+        },
+        {
             isMenu: true
         },
         {
