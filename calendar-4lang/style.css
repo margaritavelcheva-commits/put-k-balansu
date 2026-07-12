@@ -128,3 +128,13 @@ body{
     transform:translateY(-3px);
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
+
+/* Корица */
+.cover-photo{
+    margin-bottom:0;
+}
+.cover-photo img{
+    width:100%;
+    border-radius:16px;
+    display:block;
+}
